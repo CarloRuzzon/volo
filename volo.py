@@ -1,23 +1,14 @@
 #calcoliamo il tempo di volo di un aereo carburante = 1480 galloni, consumo_h = 320
 
-consumotot=1480.0/320.0
-consumotot=consumotot*1000
-int(consumotot)
-secondi=consumotot%10
-int(secondi)
-consumotot/=10
-int(consumotot)
-minuti=consumotot%100
-int(minuti)
-consumotot=consumotot/100
+carb=1460.
+consumo_h=320.
 
-if (minuti>59):
-   consumotot+=1
-   minuti=minuti-59
-secondi1=minuti%10
-minuti/=10
-int(minuti)
+consumotot=carb/consumo_h
+ore=int(consumotot)
+resto=float(consumotot-int(consumotot))
+minuti=int(resto*60)
+minuti1=resto*60
+secondi1 = minuti1 - minuti
+secondi = int (secondi1*60)
 
-print "L'aereo puo viaggiare per ", int(consumotot), " ore, ", int(minuti), " minuti, ",int(secondi1),int(secondi), " secondi"
-
-
+print"L'aereo puo' volare per massimo ",ore, " ore, ",minuti, "minuti, ", secondi, "secondi"
